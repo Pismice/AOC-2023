@@ -21,11 +21,11 @@ pub fn main() !void {
     var index: u32 = 0;
     var result: u32 = 0;
     while (try iter.next()) |raw_line| {
-        index += 1;
         var isValidGame: bool = true;
         var squares_picked: u8 = undefined;
         var color: Color = undefined;
         defer {
+            index += 1;
             std.debug.print("Game {} is valid = {}\n", .{ index, isValidGame });
             if (isValidGame) {
                 result += index;

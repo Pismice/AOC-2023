@@ -62,15 +62,15 @@ pub fn main() !void {
                             color = coloro;
                             std.debug.print("Found color = {s} with {d} squares\n", .{ color.name, squares_picked });
 
-                            if (std.mem.startsWith(u8, color.name, "red")) {
+                            if (std.mem.eql(u8, color.name, "red")) {
                                 if (maxes[0].max < squares_picked) {
                                     maxes[0].max = squares_picked;
                                 }
-                            } else if (std.mem.startsWith(u8, color.name, "green")) {
+                            } else if (std.mem.eql(u8, color.name, "green")) {
                                 if (maxes[1].max < squares_picked) {
                                     maxes[1].max = squares_picked;
                                 }
-                            } else if (std.mem.startsWith(u8, color.name, "blue")) {
+                            } else if (std.mem.eql(u8, color.name, "blue")) {
                                 if (maxes[2].max < squares_picked) {
                                     maxes[2].max = squares_picked;
                                 }
